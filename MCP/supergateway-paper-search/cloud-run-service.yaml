@@ -1,0 +1,49 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: paper-search-mcp-service
+  annotations:
+    run.googleapis.com/ingress: all
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: "10"
+        run.googleapis.com/cpu-throttling: "false"
+        run.googleapis.com/timeout: "300s"
+        run.googleapis.com/execution-environment: gen2
+    spec:
+      containerConcurrency: 10
+      timeoutSeconds: 300
+      containers:
+      # Main Supergateway container (acting as Ingress)
+      - name: supergateway-ingress
+        image: node:20-alpine
+        ports:
+        - containerPort: 8080
+          name: http1
+        command: ["/bin/sh"]
+        args:
+        - -c
+        - |
+          set -e
+          echo "Installing supergateway..."
+          npm install -g supergateway
+          echo "Starting supergateway to proxy paper-search-mcp on port 8000..."
+          exec npx supergateway --baseUrl "http://localhost:8000" --port 8080 --ssePath /sse --messagePath /message --healthEndpoint /health
+        resources:
+          limits:
+            cpu: "0.25"
+            memory: "256Mi"
+
+      # paper-search-mcp Sidecar container
+      - name: paper-search-mcp-sidecar
+        # THIS IS THE LINE TO UPDATE
+        image: us-central1-docker.pkg.dev/hcls-jp1/mcp-repo/paper-search-mcp:latest # <--- Update this line
+        env:
+        - name: PORT
+          value: "8000"
+        resources:
+          limits:
+            cpu: "1"
+            memory: "1Gi"
