@@ -1,0 +1,6 @@
+google-cloud-alloydb-connector
+sqlalchemy
+pg8000
+matplotlib
+twine
+keyrings.google-artifactregistry-auth
