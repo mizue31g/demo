@@ -16,7 +16,7 @@ def getconn():
         "projects/hcls-jp1/locations/asia-northeast1/clusters/alloydb-cluster/instances/alloydb-instance",  # プロジェクト ID、リージョン、クラスタ、インスタンス、データベースを含む接続文字列
         "pg8000",  # データベースドライバ
         user="postgres",  # データベースユーザー名
-        password="postgres",  # データベースパスワード
+        password="password for postgres",  # データベースパスワード
         db="testdb"  # データベース名
     )
     return conn
