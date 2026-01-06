@@ -1,12 +1,17 @@
-# 事前準備としてこちらを実行しておくこと
-[PubMed RAG: Medical Literature Analysis with BigQuery and Gemini](https://github.com/google/pubmed-rag)
+# 事前準備
+
+1. こちらを実行する
+
+   [PubMed RAG: Medical Literature Analysis with BigQuery and Gemini](https://github.com/google/pubmed-rag)
+
+2. Gitリポジトリから git clone する
 
 # イメージのビルド
 ```
 gcloud builds submit --tag gcr.io/PROJECT_ID/bq-pubmed-search-app
 ```
 
-注: PROJECT_IDを、Google Cloud Projectに置き換えてください
+注: PROJECT_IDを、Google Cloud Projectに置き換えること
 
 # Cloud Run へのデプロイ
 ```
