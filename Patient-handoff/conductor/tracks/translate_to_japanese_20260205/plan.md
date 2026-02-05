@@ -1,9 +1,9 @@
 # Implementation Plan: Translate all application output to Japanese
 
 ## Phase 1: Setup Translation Infrastructure
-- [ ] Task: Research and select a suitable i18n library for React/TypeScript.
-    - [ ] Evaluate options (e.g., `react-i18next`, `formatjs`).
-    - [ ] Document selection rationale.
+- [x] Task: Research and select a suitable i18n library for React/TypeScript. [a0c861c]
+    - [x] Evaluate options (e.g., `react-i18next`, `formatjs`).
+    - [x] Document selection rationale.
 - [ ] Task: Integrate the chosen i18n library into the React application.
     - [ ] Configure the library for Japanese locale.
     - [ ] Create initial translation files (e.g., `ja.json`).
