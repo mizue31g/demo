@@ -4,9 +4,9 @@
 - [x] Task: Research and select a suitable i18n library for React/TypeScript. [a0c861c]
     - [x] Evaluate options (e.g., `react-i18next`, `formatjs`).
     - [x] Document selection rationale.
-- [~] Task: Integrate the chosen i18n library into the React application.
-    - [ ] Configure the library for Japanese locale.
-    - [ ] Create initial translation files (e.g., `ja.json`).
+- [x] Task: Integrate the chosen i18n library into the React application. [68247b8]
+    - [x] Configure the library for Japanese locale.
+    - [x] Create initial translation files (e.g., `ja.json`).
 - [ ] Task: Implement a mechanism to switch between locales (e.g., a language selector).
 - [ ] Task: Conductor - User Manual Verification 'Setup Translation Infrastructure' (Protocol in workflow.md)
 
