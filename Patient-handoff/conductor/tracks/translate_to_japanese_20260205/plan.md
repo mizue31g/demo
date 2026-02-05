@@ -7,7 +7,7 @@
 - [x] Task: Integrate the chosen i18n library into the React application. [68247b8]
     - [x] Configure the library for Japanese locale.
     - [x] Create initial translation files (e.g., `ja.json`).
-- [ ] Task: Implement a mechanism to switch between locales (e.g., a language selector).
+- [x] Task: Implement a mechanism to switch between locales (e.g., a language selector). [70c8d6c]
 - [ ] Task: Conductor - User Manual Verification 'Setup Translation Infrastructure' (Protocol in workflow.md)
 
 ## Phase 2: Localize Static UI Elements
