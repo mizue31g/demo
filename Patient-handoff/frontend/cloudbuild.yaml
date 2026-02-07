@@ -1,0 +1,14 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/${PROJECT_ID}/patient-handoff-frontend'
+      - '--build-arg'
+      - 'VITE_BACKEND_URL=${_VITE_BACKEND_URL}'
+      - '.'
+    dir: '.'
+images:
+  - 'gcr.io/${PROJECT_ID}/patient-handoff-frontend'
+substitutions:
+  _VITE_BACKEND_URL: 'default-backend-url' # This will be overridden by --substitutions on the gcloud command

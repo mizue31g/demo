@@ -3,7 +3,6 @@ import { AppProvider, useAppContext, ToastProvider, useToast } from './context/A
 import Dashboard from './components/Dashboard';
 import DocumentEditor from './components/DocumentEditor';
 import { CymbalHealthIcon, XIcon } from './components/icons';
-import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 // --- Global Error Boundary ---
 interface ErrorBoundaryProps {
@@ -89,12 +88,7 @@ const ToastContainer: React.FC = () => {
 
 const AppContent: React.FC = () => {
     const { view } = useAppContext();
-    const { i18n } = useTranslation(); // Use useTranslation hook
     
-    const changeLanguage = (lng: string) => {
-      i18n.changeLanguage(lng);
-    };
-
     return (
         <div className="h-screen flex flex-col bg-surface text-on-surface">
             <header className="bg-surface-container-lowest border-b border-outline-variant shrink-0 z-10">
@@ -102,18 +96,8 @@ const AppContent: React.FC = () => {
                     <div className="flex items-center">
                         <CymbalHealthIcon />
                     </div>
-                    <div className="flex items-center gap-4"> {/* Added a div to group */}
-                        <select
-                            onChange={(e) => changeLanguage(e.target.value)}
-                            value={i18n.language}
-                            className="bg-surface-container-lowest text-on-surface-variant text-sm rounded-md border border-outline px-2 py-1"
-                        >
-                            <option value="en">English</option>
-                            <option value="ja">日本語</option>
-                        </select>
-                        <div className="text-sm font-medium text-on-surface-variant">
-                            User: Dr. Johnson
-                        </div>
+                    <div className="text-sm font-medium text-on-surface-variant">
+                        User: Dr. Johnson
                     </div>
                 </div>
             </header>

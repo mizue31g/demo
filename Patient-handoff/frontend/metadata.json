@@ -1,0 +1,5 @@
+{
+  "name": "Remix: Patient Handoff",
+  "description": "An AI-powered application to assist healthcare professionals in generating accurate and concise patient handoff summaries and discharge notes, reducing manual documentation and improving patient care.",
+  "requestFramePermissions": []
+}

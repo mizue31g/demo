@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P8ZED2HMDV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-P8ZED2HMDV');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRL09T03K4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZRL09T03K4');
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Handoff Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* M3 Light Theme Color Palette */
+        --md-sys-color-primary: #0061a4;
+        --md-sys-color-on-primary: #ffffff;
+        --md-sys-color-primary-container: #d1e4ff;
+        --md-sys-color-on-primary-container: #001d36;
+        --md-sys-color-secondary: #535f70;
+        --md-sys-color-on-secondary: #ffffff;
+        --md-sys-color-secondary-container: #d7e3f8;
+        --md-sys-color-on-secondary-container: #101c2b;
+        --md-sys-color-tertiary: #6b5778;
+        --md-sys-color-on-tertiary: #ffffff;
+        --md-sys-color-tertiary-container: #f2daff;
+        --md-sys-color-on-tertiary-container: #251431;
+        --md-sys-color-error: #ba1a1a;
+        --md-sys-color-on-error: #ffffff;
+        --md-sys-color-error-container: #ffdad6;
+        --md-sys-color-on-error-container: #410002;
+        --md-sys-color-background: #fdfcff;
+        --md-sys-color-on-background: #1a1c1e;
+        --md-sys-color-surface: #fdfcff;
+        --md-sys-color-on-surface: #1a1c1e;
+        --md-sys-color-surface-variant: #dfe3eb;
+        --md-sys-color-on-surface-variant: #43474e;
+        --md-sys-color-outline: #73777f;
+        --md-sys-color-outline-variant: #c3c7cf;
+        --md-sys-color-shadow: #000000;
+        --md-sys-color-scrim: #000000;
+        --md-sys-color-inverse-surface: #2f3033;
+        --md-sys-color-inverse-on-surface: #f1f0f4;
+        --md-sys-color-inverse-primary: #9ecaff;
+        
+        /* Custom colors for statuses */
+        --custom-color-warning-container: #ffdeb7;
+        --custom-color-on-warning-container: #2b1700;
+
+        /* Custom Surface Tones */
+        --md-sys-color-surface-container-lowest: #FFFFFF;
+        --md-sys-color-surface-container-low: #F7F9FC;
+        --md-sys-color-surface-container: #F1F3F7;
+        --md-sys-color-surface-container-high: #EBEFF2;
+        --md-sys-color-surface-container-highest: #E6E9ED;
+      }
+      ::selection {
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+      }
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: var(--md-sys-color-background);
+        color: var(--md-sys-color-on-background);
+      }
+      #printable-area h1 { font-size: 1.875rem; font-weight: 500; margin-top: 1.5rem; margin-bottom: 0.75rem; line-height: 1.25; }
+      #printable-area h3 { font-size: 1.25rem; font-weight: 500; margin-top: 1.25rem; margin-bottom: 0.5rem; line-height: 1.25; }
+      #printable-area h4 { font-size: 1rem; font-weight: 700; margin-top: 1rem; margin-bottom: 0.25rem; line-height: 1.25; }
+      .citation-chip {
+        display: inline-block;
+        padding: 0px 6px;
+        border-radius: 8px;
+        font-size: 0.8em;
+        font-weight: 500;
+        margin: 0 2px;
+        cursor: pointer;
+        transition: all 0.2s;
+        vertical-align: super;
+      }
+      .citation-chip:hover {
+        filter: brightness(95%);
+        transform: translateY(-1px);
+      }
+      .citation-chip.citation-notes {
+        background-color: var(--custom-color-warning-container);
+        color: var(--custom-color-on-warning-container);
+      }
+      .citation-chip.citation-labs {
+        background-color: var(--md-sys-color-secondary-container);
+        color: var(--md-sys-color-on-secondary-container);
+      }
+      .citation-chip.citation-meds {
+        background-color: var(--md-sys-color-tertiary-container);
+        color: var(--md-sys-color-on-tertiary-container);
+      }
+      .citation-chip.invalid {
+        background-color: var(--md-sys-color-error-container);
+        color: var(--md-sys-color-on-error-container);
+        outline: 1px solid var(--md-sys-color-error);
+        cursor: help;
+      }
+      .highlight-record {
+        transition: all 0.3s ease-in-out;
+        border-color: var(--md-sys-color-primary) !important;
+        box-shadow: 0 0 0 2px var(--md-sys-color-primary);
+        transform: scale(1.02);
+      }
+
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      @keyframes fade-in-right {
+        from {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .animate-fade-in-right {
+        animation: fade-in-right 0.3s ease-out forwards;
+      }
+
+      @media print {
+        /* Hide everything by default */
+        body * {
+          visibility: hidden;
+        }
+
+        /* Make the printable area and everything inside it visible */
+        #printable-area, #printable-area * {
+          visibility: visible;
+        }
+
+        /* Position the printable area at the top of the page */
+        #printable-area {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          padding: 2rem;
+          margin: 0;
+          border: none;
+          font-size: 12pt;
+          line-height: 1.5;
+          color: #000;
+        }
+        
+        /* Also hide citations within the printable area */
+        #printable-area .citation-chip {
+          display: none !important;
+        }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': 'var(--md-sys-color-primary)',
+              'on-primary': 'var(--md-sys-color-on-primary)',
+              'primary-container': 'var(--md-sys-color-primary-container)',
+              'on-primary-container': 'var(--md-sys-color-on-primary-container)',
+              'secondary': 'var(--md-sys-color-secondary)',
+              'on-secondary': 'var(--md-sys-color-on-secondary)',
+              'secondary-container': 'var(--md-sys-color-secondary-container)',
+              'on-secondary-container': 'var(--md-sys-color-on-secondary-container)',
+              'tertiary': 'var(--md-sys-color-tertiary)',
+              'on-tertiary': 'var(--md-sys-color-on-tertiary)',
+              'tertiary-container': 'var(--md-sys-color-tertiary-container)',
+              'on-tertiary-container': 'var(--md-sys-color-on-tertiary-container)',
+              'error': 'var(--md-sys-color-error)',
+              'on-error': 'var(--md-sys-color-on-error)',
+              'error-container': 'var(--md-sys-color-error-container)',
+              'on-error-container': 'var(--md-sys-color-on-error-container)',
+              'background': 'var(--md-sys-color-background)',
+              'on-background': 'var(--md-sys-color-on-background)',
+              'surface': 'var(--md-sys-color-surface)',
+              'on-surface': 'var(--md-sys-color-on-surface)',
+              'surface-variant': 'var(--md-sys-color-surface-variant)',
+              'on-surface-variant': 'var(--md-sys-color-on-surface-variant)',
+              'outline': 'var(--md-sys-color-outline)',
+              'outline-variant': 'var(--md-sys-color-outline-variant)',
+              'shadow': 'var(--md-sys-color-shadow)',
+              'scrim': 'var(--md-sys-color-scrim)',
+              'inverse-surface': 'var(--md-sys-color-inverse-surface)',
+              'inverse-on-surface': 'var(--md-sys-color-inverse-on-surface)',
+              'inverse-primary': 'var(--md-sys-color-inverse-primary)',
+              'surface-container-lowest': 'var(--md-sys-color-surface-container-lowest)',
+              'surface-container-low': 'var(--md-sys-color-surface-container-low)',
+              'surface-container': 'var(--md-sys-color-surface-container)',
+              'surface-container-high': 'var(--md-sys-color-surface-container-high)',
+              'surface-container-highest': 'var(--md-sys-color-surface-container-highest)',
+              'warning-container': 'var(--custom-color-warning-container)',
+              'on-warning-container': 'var(--custom-color-on-warning-container)',
+            }
+          }
+        }
+      }
+    </script>
+  <script src="https://unpkg.com/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.22.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-surface">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
