@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True) # Initialize CORS to allow all origins for API routes
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True) # Initialize CORS to allow all origins for API routes
 
 from google import genai
 from google.genai import types
