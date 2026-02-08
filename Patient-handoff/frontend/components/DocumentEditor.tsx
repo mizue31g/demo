@@ -506,7 +506,7 @@ const HandoffDocument: React.FC<{
                     </select>
                     {isHandoffDocument ? (
                         <div className="relative inline-flex group" ref={formatMenuRef} title={!documentType ? "Please select a document type first" : ""}>
-                            <button onClick={() => onGenerate(handoffFormat)} disabled={isDisabled || !documentType} className="pl-6 pr-4 py-2.5 bg-secondary-container text-on-secondary-container rounded-l-full hover:shadow-md disabled:bg-on-surface/12 disabled:text-on-surface/38 disabled:cursor-not-allowed font-medium text-sm flex items-center gap-2 transition-colors"><GeminiIcon className="h-5 w-5"/>Generate ({handoffFormat.toUpperCase()})</button>
+                            <button onClick={() => onGenerate(handoffFormat)} disabled={isDisabled || !documentType} className="pl-6 pr-4 py-2.5 bg-secondary-container text-on-secondary-container rounded-l-full hover:shadow-md disabled:bg-on-surface/12 disabled:text-on-surface/38 disabled:cursor-not-allowed font-medium text-sm flex items-center gap-2 transition-colors"><GeminiIcon className="h-5 w-5"/>生成 ({handoffFormat.toUpperCase()})</button>
                             <button onClick={() => setIsFormatMenuOpen(p => !p)} disabled={isDisabled || !documentType} className="px-3 py-2.5 bg-secondary-container text-on-secondary-container rounded-r-full hover:shadow-md disabled:bg-on-surface/12 disabled:cursor-not-allowed border-l border-on-secondary-container/20 transition-colors"><ChevronDownIcon className="h-5 w-5" /></button>
                             {isFormatMenuOpen && (<div className="absolute top-full mt-2 w-40 bg-surface-container rounded-lg shadow-lg border z-10"><button onClick={() => {setHandoffFormat('ipass'); setIsFormatMenuOpen(false);}} className="w-full text-left px-4 py-2 text-sm hover:bg-on-surface/5">IPASS</button><button onClick={() => {setHandoffFormat('sbar'); setIsFormatMenuOpen(false);}} className="w-full text-left px-4 py-2 text-sm hover:bg-on-surface/5">SBAR</button></div>)}
                         </div>
@@ -517,7 +517,7 @@ const HandoffDocument: React.FC<{
                             className="px-6 py-2.5 bg-secondary-container text-on-secondary-container rounded-full hover:shadow-md disabled:bg-on-surface/12 disabled:text-on-surface/38 disabled:cursor-not-allowed font-medium text-sm flex items-center gap-2 transition-colors"
                         >
                             <GeminiIcon className="h-5 w-5"/>
-                            <span>Generate</span>
+                            <span>生成</span>
                         </button>
                     )}
                 </div>
