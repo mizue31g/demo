@@ -106,7 +106,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
 **状況 (Situation):** ICU-2の安藤京香、血液培養陽性後の状態。
 **背景 (Background):** 患者は敗血症性ショックで入院[1]。血液培養でMSSAが陽性であることが判明[7]。
 **評価 (Assessment):** 感染症科にコンサルト[8]。今朝、抗生物質をナフシリンにデエスカレーション[9]。変更後、昇圧剤の必要量が減少し始めている[10]。鎮静・換気状態は続いているが、血行動態は改善している。
-**推奨 (Recommendation):バイタルを監視し、許容範囲内でノルエピネフリンを漸減する。ナフシリンへの反応の兆候を監視する。換気患者の標準的なICUケアを継続する。
+**推奨 (Recommendation):** バイタルを監視し、許容範囲内でノルエピネフリンを漸減する。ナフシリンへの反応の兆候を監視する。換気患者の標準的なICUケアを継続する。
 `
     }
   ],
@@ -159,7 +159,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
       content: `
 ### SBAR Handoff
 **状況 (Situation):** 伊藤さくら、22歳女性、MVA後の観察と疼痛管理のため入院。
-**背景 (Background):** 患者は低速MVAでシートベルトを着用した運転手でした[1]。首と背中の上部の痛みを訴えています。
+**背景 (Background)::** 患者は低速MVAでシートベルトを着用した運転手でした[1]。首と背中の上部の痛みを訴えています。
 **評価 (Assessment):** 頭部と頸椎のCTスキャンは陰性でした[2]。患者は意識清明で、神経学的検査は安定しています。痛みは5/10で、PRNイブプロフェンとシクロベンザプリンで管理されています[3, 4]。四肢の動きは良好です。
 **推奨 (Recommendation):** 神経学的状態の監視を継続します。必要に応じて鎮痛薬を投与し、その効果を記録します。許容範囲内で穏やかな運動を奨励します。
 `
@@ -239,4 +239,10 @@ export const MOCK_RECORDS: { [key: number]: PatientRecord[] } = {
         { id: 37, citationId: 7, type: RecordType.NurseNote, timestamp: '2023-10-20 16:00', content: '患者は問題なく歩行。経口薬で痛みが十分にコントロールされていると報告。今夜退院予定。理学療法士から在宅運動プログラムの印刷物を提供。' },
         { id: 38, citationId: 8, type: RecordType.ProgressNote, timestamp: '2023-10-20 17:00', content: '退院サマリーメモ: 患者は退院可能。MVAによる頸部捻挫の診断。イブプロフェンとシクロベンザプリンの処方箋を薬局に送信。1週間後に主治医とフォローアップするように指示。再診の注意点も確認済み。' },
     ],
+};
+
+export const DOCUMENT_TYPE_TRANSLATIONS: { [key in DocumentType]: string } = {
+  [DocumentType.MDHandoff]: '医師による患者引き継ぎ',
+  [DocumentType.NurseHandoff]: '看護師による引き継ぎ',
+  [DocumentType.DischargeSummaryDiagnosesPlan]: '退院要約と診断/計画',
 };

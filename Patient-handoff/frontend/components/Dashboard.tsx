@@ -123,7 +123,7 @@ const Dashboard: React.FC = () => {
                                         <tr key={doc.id} className="border-b border-surface-variant hover:bg-surface-container cursor-pointer" onClick={() => selectedPatient && editDocument(selectedPatient, doc)}>
                                             <th scope="row" className="px-6 py-4 font-medium text-on-surface whitespace-nowrap">
                                                 <div className="flex flex-col">
-                                                    <span>{doc.documentType}</span>
+                                                    <span>{DOCUMENT_TYPE_TRANSLATIONS[doc.documentType as DocumentType] || doc.documentType}</span>
                                                     <div className="flex items-center gap-2 mt-1.5">
                                                         {doc.format && doc.documentType !== DocumentType.DischargeSummaryDiagnosesPlan && (
                                                             <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-surface-container-high text-on-surface-variant">

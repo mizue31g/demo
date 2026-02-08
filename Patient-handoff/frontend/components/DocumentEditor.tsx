@@ -107,7 +107,7 @@ const PatientHeader: React.FC<{ patient: Patient; onBack: () => void; documentTy
             </button>
             <div>
                 <h1 className="text-2xl font-normal text-on-surface">
-                    {documentType || (isNew ? 'New Handoff Document' : '')}
+                    {documentType ? DOCUMENT_TYPE_TRANSLATIONS[documentType] : (isNew ? '新規引き継ぎドキュメント' : '')}
                     {isDirty && <span className="text-primary" title="Unsaved changes">*</span>}
                 </h1>
             </div>
@@ -501,7 +501,7 @@ const HandoffDocument: React.FC<{
                 <div className="flex items-center gap-2">
                     <select value={documentType} onChange={(e) => setDocumentType(e.target.value as DocumentType)} className="p-2.5 bg-surface-container-highest border border-outline rounded-lg focus:ring-2 focus:ring-primary text-sm">
                         <option value="" disabled>Select document type...</option>
-                        {Object.values(DocumentType).map(dt => <option key={dt} value={dt}>{dt}</option>)}
+                        {Object.values(DocumentType).map(dt => <option key={dt} value={dt}>{DOCUMENT_TYPE_TRANSLATIONS[dt as DocumentType] || dt}</option>)}
                     </select>
                     {isHandoffDocument ? (
                         <div className="relative inline-flex group" ref={formatMenuRef} title={!documentType ? "Please select a document type first" : ""}>
