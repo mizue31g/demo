@@ -78,7 +78,7 @@ export const getDocument = async (documentId: number): Promise<HandoffDocument> 
                         6. Respond ONLY with the generated Markdown content for the document. Do not include any other text or explanations.
                     `;
                     try {
-                        const response = await postApi('/generate_text', { prompt: prompt });
+                        const response = await postApi('/api/generate_text', { prompt: prompt });
                         doc.content = response.generated_text.trim();
                     } catch(e: any) {
                         console.error("Error generating content for document:", e);
@@ -187,7 +187,7 @@ export const generateDocument = async (patientId: number, documentType: Document
     
     let summaryContent = '';
     try {
-        const response = await postApi('/generate_text', { prompt: prompt });
+        const response = await postApi('/api/generate_text', { prompt: prompt });
         summaryContent = response.generated_text.trim();
     } catch(e: any) {
         console.error("Error generating new document:", e);
@@ -247,7 +247,7 @@ export const chatWithDocument = async (
     records: PatientRecord[]
 ): Promise<ChatResponse> => {
     try {
-        const response = await postApi('/chat_with_document', {
+        const response = await postApi('/api/chat_with_document', {
             documentContent,
             userPrompt,
             records,
@@ -267,7 +267,7 @@ export const modifySelectedText = async (
     instruction: string
 ): Promise<string> => {
     try {
-        const response = await postApi('/modify_text', {
+        const response = await postApi('/api/modify_text', {
             selectedMarkdown,
             instruction,
         });
@@ -292,7 +292,7 @@ export const generateAudioSummary = async (documentContent: string): Promise<str
     }
 
     try {
-        const response = await postApi('/generate_audio', { text: documentContent });
+        const response = await postApi('/api/generate_audio', { text: documentContent });
         const base64Audio = response.audio_content;
         if (!base64Audio) {
             throw new Error("No audio data received from the API.");
@@ -315,7 +315,7 @@ export const generateSlideDeck = async (documentContent: string): Promise<Slide[
     }
 
     try {
-        const slideData = await postApi('/generate_slides', { documentContent });
+        const slideData = await postApi('/api/generate_slides', { documentContent });
         
         // Basic validation
         if (Array.isArray(slideData) && slideData.every(s => 'title' in s && Array.isArray(s.points))) {

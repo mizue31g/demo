@@ -11,7 +11,7 @@ COPY . .
 ARG VITE_BACKEND_URL
 ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
 
-RUN npm run build
+RUN sh -c "VITE_BACKEND_URL=${VITE_BACKEND_URL} npm run build"
 
 # Stage 2: Serve the React application with Node.js/Express
 FROM node:20-alpine

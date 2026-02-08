@@ -629,7 +629,7 @@ const HandoffDocument: React.FC<{
                              </div>
                          </div>
                     )}
-                    {isNewDocument && !content && !isGenerating && !isLoadingDoc && (<div className="absolute inset-0 text-on-surface-variant/70 pointer-events-none p-1">Select a document type and click "Generate" to create a summary.</div>)}
+                    {isNewDocument && !content && !isGenerating && !isLoadingDoc && (<div className="absolute inset-0 text-on-surface-variant/70 pointer-events-none p-1">ドキュメント種別を選択して、[生成]をクリックしてください</div>)}
                     <div ref={editorRef} onInput={handleInput} contentEditable={!isDisabled} className="w-full h-full focus:outline-none text-on-surface leading-relaxed whitespace-pre-wrap print:text-black"/>
                 </div>
             </div>

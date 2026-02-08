@@ -12,3 +12,4 @@ images:
   - 'gcr.io/${PROJECT_ID}/patient-handoff-frontend'
 substitutions:
   _VITE_BACKEND_URL: 'default-backend-url' # This will be overridden by --substitutions on the gcloud command
+
