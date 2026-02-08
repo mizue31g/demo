@@ -44,7 +44,7 @@ const Dashboard: React.FC = () => {
 
     return (
         <div className="h-full flex flex-col space-y-6">
-            <h1 className="text-2xl font-normal text-on-surface shrink-0">Patient Dashboard</h1>
+            <h1 className="text-2xl font-normal text-on-surface shrink-0">患者ダッシュボード</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-grow min-h-0">
                 {/* Master Pane (Patient List) */}
                 <div className="lg:col-span-1 bg-surface-container-low rounded-2xl border border-outline-variant flex flex-col">
