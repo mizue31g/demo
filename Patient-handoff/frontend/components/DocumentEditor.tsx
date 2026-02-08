@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Patient, PatientRecord, RecordType, DocumentType, HandoffDocument as HandoffDocumentType, HandoffFormat, Slide } from '../types';
+import { DOCUMENT_TYPE_TRANSLATIONS } from '../constants';
 import { generateDocument, saveDocument, generateAudioSummary, modifySelectedText, generateSlideDeck } from '../services/geminiService';
 import { BackIcon, GeminiIcon, BoldIcon, ItalicIcon, AudioIcon, TrashIcon, ChevronDownIcon, CheckIcon, PrintIcon, PresentationIcon, WarningIcon } from './icons';
 import ChatPanel from './ChatPanel';

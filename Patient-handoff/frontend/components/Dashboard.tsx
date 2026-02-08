@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Patient, HandoffDocument, DocumentType } from '../types';
+import { DOCUMENT_TYPE_TRANSLATIONS } from '../constants';
 import { usePatients, usePatientDocuments } from '../hooks/dataHooks';
 import { useAppContext } from '../context/AppContext';
 import { SearchIcon, AudioIcon, PresentationIcon } from './icons';
