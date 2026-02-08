@@ -14,7 +14,7 @@ interface ChatPanelProps {
 
 const ChatPanel: React.FC<ChatPanelProps> = ({ documentContent, setDocumentContent, patientRecords, isCollapsed, onToggle }) => {
     const [messages, setMessages] = useState<ChatMessage[]>([
-        { sender: 'ai', text: "I'm your Gemini Assistant. Ask me questions about the document or give me instructions to edit it." }
+        { sender: 'ai', text: "私はあなたのGeminiアシスタントです。ドキュメントに関する質問や編集指示をお寄せください。" }
     ]);
     const [userInput, setUserInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
