@@ -200,7 +200,7 @@ export const generateDocument = async (patientId: number, documentType: Document
         visitId: `V${Math.floor(10000 + Math.random() * 90000)}`,
         createdAt: new Date().toLocaleDateString(),
         modifiedAt: new Date().toLocaleDateString(),
-        createdBy: 'Dr. Johnson',
+        createdBy: '佐藤医師',
         content: summaryContent,
         format: documentType === DocumentType.DischargeSummaryDiagnosesPlan ? undefined : handoffFormat,
     };

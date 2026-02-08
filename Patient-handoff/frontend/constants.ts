@@ -32,7 +32,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
   1: [ // 井上拓斗
     {
       id: 1, documentType: DocumentType.MDHandoff, visitId: 'V12345', format: 'sbar',
-      createdAt: '2023-10-25', modifiedAt: '2023-10-25', createdBy: 'Dr. Miller',
+      createdAt: '2023-10-25', modifiedAt: '2023-10-25', createdBy: '田中医師',
       content: `
 ### SBAR Handoff
 **Situation:** 井上拓斗は、胸骨下痛を訴え、今朝、救急外来から観察のために入院した39歳の男性です[1]。
@@ -43,7 +43,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
     },
     {
       id: 2, documentType: DocumentType.DischargeSummaryDiagnosesPlan, visitId: 'V12345',
-      createdAt: '2023-10-26', modifiedAt: '2023-10-26', createdBy: 'Dr. Johnson',
+      createdAt: '2023-10-26', modifiedAt: '2023-10-26', createdBy: '佐藤医師',
       slides: johnDoeDischargeSlides,
       content: `
 ### 退院サマリー
@@ -72,7 +72,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
   2: [ // 安藤京香
     {
       id: 3, documentType: DocumentType.MDHandoff, visitId: 'V67890', format: 'ipass',
-      createdAt: '2023-10-27', modifiedAt: '2023-10-27', createdBy: 'Dr. Chen',
+      createdAt: '2023-10-27', modifiedAt: '2023-10-27', createdBy: '山本医師',
       content: `
 ### IPASS Handoff
 **I - Illness Severity:** 患者は重篤です。挿管、鎮静され、昇圧剤を使用しています。
@@ -88,7 +88,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
     },
     {
       id: 4, documentType: DocumentType.MDHandoff, visitId: 'V67890', format: 'sbar',
-      createdAt: '2023-10-28', modifiedAt: '2023-10-28', createdBy: 'Dr. Miller',
+      createdAt: '2023-10-28', modifiedAt: '2023-10-28', createdBy: '田中医師',
       slides: janeSmithHandoffSlides,
       content: `
 ### SBAR Handoff
@@ -100,7 +100,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
     },
     {
       id: 5, documentType: DocumentType.NurseHandoff, visitId: 'V67890', format: 'sbar',
-      createdAt: '2023-10-29', modifiedAt: '2023-10-29', createdBy: 'R.N. Davis',
+      createdAt: '2023-10-29', modifiedAt: '2023-10-29', createdBy: '鈴木看護師',
       content: `
 ### SBAR Handoff
 **Situation:** ICU-2の安藤京香、血液培養陽性後の状態。
@@ -113,7 +113,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
   3: [ // 高橋啓介
     {
       id: 6, documentType: DocumentType.MDHandoff, visitId: 'V11223', format: 'ipass',
-      createdAt: '2023-10-27', modifiedAt: '2023-10-27', createdBy: 'Dr. Chen',
+      createdAt: '2023-10-27', modifiedAt: '2023-10-27', createdBy: '山本医師',
       content: `
 ### IPASS Handoff
 **I - Illness Severity:** 安定。
@@ -128,7 +128,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
     },
     {
       id: 7, documentType: DocumentType.DischargeSummaryDiagnosesPlan, visitId: 'V11223',
-      createdAt: '2023-10-28', modifiedAt: '2023-10-28', createdBy: 'Dr. Johnson',
+      createdAt: '2023-10-28', modifiedAt: '2023-10-28', createdBy: '佐藤医師',
       content: `
 ### 退院サマリー
 **入院日:** 2023-10-27 **退院日:** 2023-10-28 **主診断:** 非心臓性胸痛
@@ -152,7 +152,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
   4: [ // 伊藤さくら
     {
       id: 8, documentType: DocumentType.NurseHandoff, visitId: 'V44556', format: 'sbar',
-      createdAt: '2023-10-19', modifiedAt: '2023-10-19', createdBy: 'R.N. Patel',
+      createdAt: '2023-10-19', modifiedAt: '2023-10-19', createdBy: '高橋看護師',
       content: `
 ### SBAR Handoff
 **Situation:** 伊藤さくら、22歳女性、MVA後の観察と疼痛管理のため入院。
@@ -163,7 +163,7 @@ export const MOCK_DOCUMENTS: { [key: number]: HandoffDocument[] } = {
     },
     {
       id: 9, documentType: DocumentType.DischargeSummaryDiagnosesPlan, visitId: 'V44556',
-      createdAt: '2023-10-20', modifiedAt: '2023-10-20', createdBy: 'Dr. Johnson',
+      createdAt: '2023-10-20', modifiedAt: '2023-10-20', createdBy: '佐藤医師',
       slides: emilyWilliamsDischargeSlides,
       content: `
 ### 退院サマリー

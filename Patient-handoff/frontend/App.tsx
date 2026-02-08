@@ -97,7 +97,7 @@ const AppContent: React.FC = () => {
                         <CymbalHealthIcon />
                     </div>
                     <div className="text-sm font-medium text-on-surface-variant">
-                        User: Dr. Johnson
+                        User: 佐藤医師
                     </div>
                 </div>
             </header>
