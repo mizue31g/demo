@@ -103,7 +103,7 @@ const Dashboard: React.FC = () => {
                             onClick={() => selectedPatient && createNewDocument(selectedPatient)}
                             disabled={!selectedPatient}
                             className="mt-2 md:mt-0 px-6 py-2.5 bg-primary text-on-primary rounded-full hover:shadow-md disabled:bg-on-surface/12 disabled:text-on-surface/38 disabled:cursor-not-allowed transition-all font-medium text-sm shrink-0">
-                            Create New Document
+                            新規ドキュメント作成
                         </button>
                     </div>
                     <div className="overflow-x-auto">
