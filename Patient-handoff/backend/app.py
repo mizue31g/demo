@@ -80,9 +80,12 @@ def generate_text():
 
     if not prompt:
         return jsonify({"error": "Prompt is required"}), 400
+    
+    # 日本語での応答を促す指示を追加
+    prompt_with_lang_instruction = prompt + "\n\nすべての応答は日本語で行ってください。"
 
     response_text = gemini_get_text_response(
-        prompt_text=prompt,
+        prompt_text=prompt_with_lang_instruction,
         model_name=model_name,
         temperature=temperature,
         max_output_tokens=max_output_tokens,
@@ -136,6 +139,7 @@ def chat_with_document():
         2. If the user is asking a question, answer it based *only* on the document context provided. Your answer should be in the 'chatResponse' field. Do not include the 'updatedDocument' field in your JSON response.
         3. If the user is asking to modify, edit, change, or rewrite the document, perform the change and return the ENTIRE, new version of the document in the 'updatedDocument' field. Your 'chatResponse' should be a brief confirmation, like "Done, I've updated the document."
         4. YOU MUST RESPOND IN THE PROVIDED JSON FORMAT.
+        5. 全ての応答は日本語で行ってください。
     """
     try:
         response = _client.models.generate_content(
@@ -193,7 +197,7 @@ def modify_text():
         Instruction: "{instruction}"
         
         Your task is to rewrite the selected text based on the instruction, preserving the Markdown formatting (like **bold**, *italics*, and citations like [1], [2], etc.).
-        IMPORTANT: Return ONLY the rewritten Markdown text, with no additional commentary or explanations.
+        IMPORTANT: 全ての応答は日本語で行ってください。Return ONLY the rewritten Markdown text, with no additional commentary or explanations.
     """
 
     try:
@@ -308,6 +312,7 @@ def generate_slides():
         3. The points should be brief and summarize the most critical information for a verbal handoff.
         4. Create logical slides for topics like "Patient Overview", "Hospital Course", "Key Events", "Diagnoses & Plan", "Discharge Plan", etc.
         5. The final output must be a JSON array of slide objects, matching the provided schema. Do not include any other text or explanations.
+        6. 全ての応答は日本語で行ってください。
     """
 
     try:
@@ -362,4 +367,3 @@ def handle_exception(e):
 if __name__ == '__main__':
     # Use Gunicorn in production, Flask's development server for local testing
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
-
