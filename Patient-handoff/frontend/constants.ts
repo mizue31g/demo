@@ -233,7 +233,7 @@ export const MOCK_RECORDS: { [key: number]: PatientRecord[] } = {
         { id: 31, citationId: 1, type: RecordType.ProgressNote, timestamp: '2023-10-19 09:30', content: '救急外来担当医メモ: 22歳女性、低速MVAでシートベルト着用の運転手。後頸部痛とこわばりを訴える。意識消失なし。GCS 15。正中線を触診しても頸椎に圧痛なし。画像検査のNEXUS基準を満たす。' },
         { id: 32, citationId: 2, type: RecordType.LabResult, timestamp: '2023-10-19 10:15', content: '**放射線科レポート - CT頸椎**\n- **所見:** 急性の骨折や不正列なし。\n\n**放射線科レポート - CT頭部**\n- **所見:** 急性の頭蓋内出血の証拠なし。' },
         { id: 33, citationId: 3, type: RecordType.NurseNote, timestamp: '2023-10-19 11:00', content: '患者は意識清明×4。5/10の首と背中の上部の痛みを訴える。四肢は良好な筋力で動かせる。疼痛管理と観察のため入院。' },
-        { id: 34, citationId: 4, type: RecordType.Medication, timestamp: '2023-10-19 11:30', content: '薬剤: イブプロフェン\n用法: 600mg 経口 6時間ごと PRN 疼痛時\n開始日: 2023-10-19\n状態: 有効\n適応: 疼痛管理\n---\n薬剤: シクロベンザプリン\n用法: 5mg 経口 1日3回 PRN 筋けいれん時\n開始日: 2023-10-19\n状態: 有効\n適応: 筋けいれん' },
+        { id: 34, citationId: 4, type: RecordType.Medication, timestamp: '2023-10-19 11:30', content: 'Medication: イブプロフェン\n用法: 600mg 経口 6時間ごと PRN 疼痛時\n開始日: 2023-10-19\nStatus: 有効\n適応: 疼痛管理\n---\nMedication: シクロベンザプリン\n用法: 5mg 経口 1日3回 PRN 筋けいれん時\n開始日: 2023-10-19\nStatus: 有効\n適応: 筋けいれん' },
         { id: 35, citationId: 5, type: RecordType.ProgressNote, timestamp: '2023-10-20 09:00', content: '夜間、患者はイブプロフェン2回、シクロベンザプリン1回を必要とした。痛みは現在3/10。神経学的検査は安定。評価と運動を提供するため、理学療法コンサルトを指示する。' },
         { id: 36, citationId: 6, type: RecordType.ProgressNote, timestamp: '2023-10-20 11:30', content: '理学療法評価メモ: 患者は、頸部捻挫と一致する痛みとけいれんによる頸部可動域制限を呈する。筋力と感覚は正常。穏やかなストレッチ、姿勢、温冷罨法の使用について指導。患者は良好な理解を示した。' },
         { id: 37, citationId: 7, type: RecordType.NurseNote, timestamp: '2023-10-20 16:00', content: '患者は問題なく歩行。経口薬で痛みが十分にコントロールされていると報告。今夜退院予定。理学療法士から在宅運動プログラムの印刷物を提供。' },

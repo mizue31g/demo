@@ -58,21 +58,22 @@ cd demo/Patient-handoff
 2.  Cloud Build を使用して Docker イメージをビルドし、バックエンドの URL を `_VITE_BACKEND_URL` 置換変数として渡します。`PROJECT_ID` はご自身の Google Cloud プロジェクトIDに、`YOUR_BACKEND_SERVICE_URL` はバックエンドデプロイ時にメモした URL に置き換えてください。
     ```bash
     gcloud builds submit \
-      --tag gcr.io/${PROJECT_ID}/patient-handoff-frontend \
-      --substitutions=_VITE_BACKEND_URL="YOUR_BACKEND_SERVICE_URL" \
+      --config cloudbuild.yaml \
+      --substitutions=_VITE_BACKEND_URL="https://patient-handoff-backend-g2rmsdbipa-an.a.run.app" \
+      --project hcls-jp1 \
       .
     ```
     例:
     ```bash
     gcloud builds submit \
-      --tag gcr.io/hcls-jp1/patient-handoff-frontend \
+      --config cloudbuild.yaml \
       --substitutions=_VITE_BACKEND_URL="https://patient-handoff-backend-g2rmsdbipa-an.a.run.app" \
       .
     ```
 3.  ビルドした Docker イメージを Cloud Run にデプロイします。
     ```bash
     gcloud run deploy patient-handoff-frontend \
-      --image gcr.io/${PROJECT_ID}/patient-handoff-frontend \
+      --image gcr.io/hcls-jp1/patient-handoff-frontend \
       --region asia-northeast1 \
       --project hcls-jp1 \
       --allow-unauthenticated
